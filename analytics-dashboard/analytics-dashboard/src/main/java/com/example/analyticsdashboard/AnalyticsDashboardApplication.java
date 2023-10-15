@@ -20,7 +20,7 @@ public class AnalyticsDashboardApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AnalyticsDashboardApplication.class, args);
-		String uri = "mongodb+srv://brunda:lpkojihu@insight-pulse.udmyfqn.mongodb.net/?retryWrites=true&w=majority";
+		String uri = ;
 		ServerApi serverApi = ServerApi.builder()
                 .version(ServerApiVersion.V1)
                 .build();
