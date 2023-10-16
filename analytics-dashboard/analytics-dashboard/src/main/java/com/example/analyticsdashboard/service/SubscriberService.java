@@ -22,17 +22,18 @@ public class SubscriberService {
 	private PlanRepository planRepository;
 	
 
-	public List<SubscriberDTO> getSubsWithPlanPrice() {
+	public List<SubscriberDTO> getSubscriberDetails() {
 		List<Subscriber> subscribers = subscriberRepository.findAll();
         List<SubscriberDTO> subscribersWithPricing = new ArrayList<>();
 
         for (Subscriber subscriber : subscribers) {
-            Plan plan = planRepository.findByPlanId(subscriber.getPlanId()).orElse(null);
+            Plan plan = planRepository.findByPlanName(subscriber.getPlanName()).orElse(null);
 
             if (plan != null) {
-                subscribersWithPricing.add(new SubscriberDTO(subscriber, plan.getLocationBasedPricing().get(subscriber.getLocation())));
+                subscribersWithPricing.add(new SubscriberDTO(subscriber, plan.getLocationBasedPricing().get(subscriber.getLocation()),plan.getPlanType()));
+                
             } else {
-                subscribersWithPricing.add(new SubscriberDTO(subscriber, 0)); // Handle when the plan is not found.
+                subscribersWithPricing.add(new SubscriberDTO(subscriber, 0,"")); // Handle when the plan is not found.
             }
         }
 

@@ -10,6 +10,8 @@ import com.example.analyticsdashboard.entity.Plan;
 @Repository
 public interface PlanRepository extends MongoRepository<Plan,String>{
 
-	public Optional<Plan> findByPlanId(int planId);
+	public Optional<Plan> findByPlanId(String planId);
+	
+	public Optional<Plan> findByPlanName(String planName);
 
 }

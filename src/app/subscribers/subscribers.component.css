@@ -1,0 +1,37 @@
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Style the table headers */
+  th {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    font-weight: bold;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  /* Style the table rows */
+  tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray background for even rows */
+  }
+  
+  /* Hover effect for table rows */
+  tr:hover {
+    background-color: #ccc; /* Darker gray on hover */
+  }
+  
+  /* Style table cells (td) */
+  td {
+    padding: 8px;
+  }
+  
+  /* Center-align subscriber ID, Name, and Location */
+  td:nth-child(1),
+  td:nth-child(2),
+  td:nth-child(4) {
+    text-align: center;
+  }
+  

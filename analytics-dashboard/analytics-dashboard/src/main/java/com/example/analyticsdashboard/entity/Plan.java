@@ -12,7 +12,7 @@ public class Plan {
 	
 	@Id
 	@Field("planId")
-	int planId;
+	String planId;
 
 	String planName;
 	String planType;
@@ -69,10 +69,10 @@ public class Plan {
 	public void setLocationBasedPricing(Map<String, Integer> locationBasedPricing) {
 		this.locationBasedPricing = locationBasedPricing;
 	}
-	public int getPlanId() {
+	public String getPlanId() {
 		return planId;
 	}
-	public void setPlanId(int planId) {
+	public void setPlanId(String planId) {
 		this.planId = planId;
 	}
 	public String getPlanName() {

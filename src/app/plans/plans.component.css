@@ -1,0 +1,47 @@
+/* plans.component.css */
+.plans-container {
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .plan-filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .plan-filters select {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .plan-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .plan-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    width: 300px;
+  }
+  
+  .plan-card h3 {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  .plan-card p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  /* You can add more styles as needed */
+  

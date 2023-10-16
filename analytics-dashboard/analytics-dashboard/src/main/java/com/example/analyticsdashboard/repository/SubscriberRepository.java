@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.example.analyticsdashboard.entity.Subscriber;
 
 @Repository
-public interface SubscriberRepository extends MongoRepository<Subscriber,Integer> {
-	public Subscriber findBySubscriberID(int id);
+public interface SubscriberRepository extends MongoRepository<Subscriber,String> {
+	public Subscriber findBySubscriberID(String id);
 
 }

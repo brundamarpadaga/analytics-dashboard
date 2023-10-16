@@ -18,8 +18,7 @@ import com.example.analyticsdashboard.repository.SubscriberRepository;
 @CrossOrigin
 public class AnalyticsController {
 	
-	@Autowired
-	private SubscriberRepository subscriberRepository ;
+
 	
 	
 

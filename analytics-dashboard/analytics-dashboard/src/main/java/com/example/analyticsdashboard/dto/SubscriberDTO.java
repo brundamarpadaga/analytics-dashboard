@@ -5,11 +5,21 @@ import com.example.analyticsdashboard.entity.Subscriber;
 public class SubscriberDTO {
     private Subscriber subscriber;
     private int locationBasedPricing;
+    private String planType;
 
-    public SubscriberDTO(Subscriber subscriber, int locationBasedPricing) {
+    public SubscriberDTO(Subscriber subscriber, int locationBasedPricing,String planType) {
         this.subscriber = subscriber;
         this.locationBasedPricing = locationBasedPricing;
+        this.planType = planType;
     }
+
+	public String getPlanType() {
+		return planType;
+	}
+
+	public void setPlanType(String planType) {
+		this.planType = planType;
+	}
 
 	public Subscriber getSubscriber() {
 		return subscriber;

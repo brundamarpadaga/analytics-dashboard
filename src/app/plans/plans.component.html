@@ -1,0 +1,47 @@
+<!-- plans.component.html -->
+<div class="plans-container">
+    <h2>Plans</h2>
+
+    <div class="plan-filters">
+        <!-- Dropdown to select the plan type -->
+        <select [(ngModel)]="selectedPlanType" (change)="onPlanTypeChange($event)">
+            <option value="Prepaid">Prepaid</option>
+            <option value="Postpaid">Postpaid</option>
+        </select>
+
+        <!-- Dropdown to select the city -->
+        <select [(ngModel)]="selectedCity" (change)="onCityChange($event)">
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Mumbai">Mumbai</option>
+        </select>
+    </div>
+
+    <div>
+
+        <button (click)="navigateToAddPlanPage()">Add Plan</button>
+
+    </div>
+
+
+
+    <!-- Display existing plans -->
+    <div class="plan-list">
+        <div *ngFor="let plan of plans">
+            <div class="plan-card" *ngIf="plan.planType === selectedPlanType">
+                <h3>{{ plan.planName }}</h3>
+                <p>Type: {{ plan.planType }}</p>
+                <p>Validity: {{ plan.validity }} days</p>
+                <p>Price: &#8377; {{ plan.locationBasedPricing[selectedCity] }}</p>
+                <p>SMS: {{ plan.totalSMS}}/pack <span *ngIf="plan.planType === 'Prepaid'"> | Data: {{plan.dataPerDay}}
+                        {{plan.dataUnit}}/day </span> </p>
+                <p>
+                    <span *ngIf="plan.planType === 'Postpaid'"> Data with roll-over: {{ plan.dataPerPack }} {{
+                        plan.dataUnit }} </span>
+                </p>
+                <p> {{ plan.callsUnlimited ? 'Unlimited local STD & Roaming Calls' : 'Talk time: '+ plan.talkTime }}</p>
+                <p> Validity:{{plan.validity}} days</p>
+            </div>
+        </div>
+    </div>
+</div>

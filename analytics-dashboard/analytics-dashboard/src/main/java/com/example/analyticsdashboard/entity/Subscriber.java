@@ -9,29 +9,25 @@ public class Subscriber {
 
 	@Id
 	@Field("subscriberID")
-	private int subscriberID;
+	private String subscriberID;
 	
 	private String name;
 	private String phoneNumber;
 	private String location;
 	
-	@Field("planId")
-	private int planId;
+	@Field("planName")
+	private String planName;
 
-	public int getPlanId() {
-		return planId;
+	public String getPlanName() {
+		return planName;
 	}
 
-	public void setPlanId(int planId) {
-		this.planId = planId;
+	public void setPlanName(String planId) {
+		this.planName = planId;
 	}
 
-	public int getSubscriberID() {
+	public String getSubscriberID() {
 		return subscriberID;
-	}
-
-	public void setSubscriberID(int subscriberID) {
-		this.subscriberID = subscriberID;
 	}
 
 	public String getName() {
