@@ -1,0 +1,4 @@
+@PostMapping("/subscriber/add")
+	public void addSubscriber(@RequestBody Subscriber sub) {
+		subscriberService.addSubscriber(sub);
+	}

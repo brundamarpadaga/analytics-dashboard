@@ -20,7 +20,6 @@ public class AnalyticsDashboardApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AnalyticsDashboardApplication.class, args);
-<<<<<<< HEAD
 //		String uri = "mongodb+srv://brunda:lpkojihu@insight-pulse.udmyfqn.mongodb.net/?retryWrites=true&w=majority";
 //		ServerApi serverApi = ServerApi.builder()
 //                .version(ServerApiVersion.V1)
@@ -40,27 +39,6 @@ public class AnalyticsDashboardApplication {
 //	            System.out.println("No matching documents found.");
 //	        }
 //	    }
-=======
-		String uri = ;
-		ServerApi serverApi = ServerApi.builder()
-                .version(ServerApiVersion.V1)
-                .build();
-        MongoClientSettings settings = MongoClientSettings.builder()
-                .applyConnectionString(new ConnectionString(uri))
-                .serverApi(serverApi)
-                .build();
-
-		try (MongoClient mongoClient = MongoClients.create(settings)) {
-	        MongoDatabase database = mongoClient.getDatabase("insights-pulse");
-	        MongoCollection<Document> collection = database.getCollection("subscribers");
-	        Document doc = collection.find(eq("name", "Josh")).first();
-	        if (doc != null) {
-	            System.out.println(doc.toJson());
-	        } else {
-	            System.out.println("No matching documents found.");
-	        }
-	    }
->>>>>>> origin/main
 	}
 
 }
