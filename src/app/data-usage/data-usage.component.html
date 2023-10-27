@@ -1,0 +1,20 @@
+<div class="data-usage-form">
+    <h2>Data Usage</h2>
+    <form (ngSubmit)="useData()">
+      <div class="form-group">
+        <label for="subscriberId">Select Subscriber:</label>
+        <select class="form-control" name="subscriberId" [(ngModel)]="selectedSubscriberId" required>
+          <option *ngFor="let subscriber of subscribers" [value]="subscriber.subscriberID">
+            {{ subscriber.name }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="dataUsed">Data Used (MB/GB):</label>
+        <input class="form-control" type="number" name="dataUsed" [(ngModel)]="dataUsed" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Use Data</button>
+    </form>
+   
+  </div>
+  

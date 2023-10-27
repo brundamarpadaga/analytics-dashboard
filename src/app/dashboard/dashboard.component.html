@@ -1,0 +1,82 @@
+<div class="admin">
+    <header class="admin__header">
+      <a href="#" class="logo">
+        <h1>Insights</h1>
+      </a>
+      <!-- <div class="toolbar">
+        <button class="btn btn--primary">Add New Plumbus</button>
+        <a href="#" class="logout">
+          Log Out
+        </a>
+      </div> -->
+    </header>
+    <nav class="admin__nav">
+      <ul class="menu">
+        <li class="menu__item">
+          <a class="menu__link" href="/dashboard">Dashboard</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="/plans">Plans</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="/subscribers">Subscribers</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="/call-records">Call Records</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="/sms-records">SMS records</a>
+        </li>
+        <!-- <li class="menu__item">
+          <a class="menu__link" href="#">Plumbuses</a>
+        </li> -->
+      </ul>
+    </nav>
+    <main class="admin__main">
+      <h2>Dashboard</h2>
+      <div class="dashboard">
+        <div class="dashboard__item">
+          <div class="card">
+            <app-call-records-chart></app-call-records-chart>
+          </div>
+        </div>
+        <div class="dashboard__item">
+          <div class="card">
+            <h2>Average Call Duration</h2>
+            <p>{{ averageDuration /60 | number:'1.2-2'}} minutes </p>
+          </div>
+        </div>
+        <!-- <div class="dashboard__item dashboard__item--full">
+          <div class="card">
+            <img src="https://imgs.xkcd.com/comics/decline.png" alt="" />
+          </div>
+        </div> -->
+        <div class="dashboard__item dashboard__item--col">
+          <div class="card">A</div>
+        </div>
+        <div class="dashboard__item dashboard__item--col">
+          <div class="card">B</div>
+        </div>
+        <div class="dashboard__item dashboard__item--col">
+          <div class="card">C</div>
+        </div>
+        <div class="dashboard__item dashboard__item--col">
+          <div class="card">D</div>
+        </div>
+      </div>
+      
+    </main>
+    <footer class="admin__footer">
+      <ul class="ticker">
+        <li class="ticker__item">BTC: +3.12%</li>
+        <li class="ticker__item">ETH: +1.29%</li>
+        <li class="ticker__item">XRP: -0.32%</li>
+        <li class="ticker__item">BCH: -2.82%</li>
+        <li class="ticker__item">EOS: +1.44%</li>
+        <li class="ticker__item">CSS: +13.37%</li>
+      </ul>
+      <span>
+        &copy; 2018 Grid Inc.
+      </span>
+    </footer>
+  </div>

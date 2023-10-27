@@ -2,6 +2,7 @@ package com.example.analyticsdashboard;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import static com.mongodb.client.model.Filters.eq;
 import org.bson.Document;
@@ -16,6 +17,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
 @SpringBootApplication
+@EnableScheduling
 public class AnalyticsDashboardApplication {
 
 	public static void main(String[] args) {

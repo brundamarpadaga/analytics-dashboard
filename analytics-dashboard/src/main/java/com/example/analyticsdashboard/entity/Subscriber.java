@@ -1,15 +1,16 @@
 package com.example.analyticsdashboard.entity;
 
-import org.springframework.data.annotation.Id;
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @Document(collection = "subscribers")
 public class Subscriber {
 
-	@Id
+	@MongoId
 	@Field("subscriberID")
-	private String subscriberID;
+	private ObjectId subscriberID;
 	
 	private String name;
 	private String phoneNumber;
@@ -27,7 +28,7 @@ public class Subscriber {
 	}
 
 	public String getSubscriberID() {
-		return subscriberID;
+		return subscriberID.toString();
 	}
 
 	public String getName() {
@@ -36,7 +37,7 @@ public class Subscriber {
 	
 
 	public void setSubscriberID(String subscriberID) {
-		this.subscriberID = subscriberID;
+		this.subscriberID = new ObjectId(subscriberID);
 	}
 
 	public void setName(String name) {

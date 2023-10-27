@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>SMS Records</h2>
+  
+    <div class="form-group">
+      <label for="subscriberFilter">Filter by Subscriber ID:</label>
+      <input id="subscriberFilter" type="text" class="form-control" [(ngModel)]="subscriberFilter">
+    </div>
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Subscriber ID</th>
+          <th>Phone Number</th>
+          <th>Sent Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let smsRecord of filteredSmsRecords">
+          <td>{{ smsRecord.subscriberID }}</td>
+          <td>{{ smsRecord.phoneNumber }}</td>
+          <td>{{ smsRecord.sentTime }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

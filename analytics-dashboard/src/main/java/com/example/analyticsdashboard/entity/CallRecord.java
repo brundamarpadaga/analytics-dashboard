@@ -2,20 +2,24 @@ package com.example.analyticsdashboard.entity;
 
 import java.time.LocalDateTime;
 
-import org.springframework.data.annotation.Id;
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.FieldType;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @Document(collection ="callRecords")
 public class CallRecord {
 	
-	@Id
-	private String id;
+	@MongoId(value=FieldType.OBJECT_ID)
+	@Field("id")
+	private ObjectId id;
 	
 	private LocalDateTime callStartTime;
     private LocalDateTime callEndTime;
     private int callDuration; 
     private String phoneNumber; 
+    private boolean callActive;
     
 	@Field("subscriberID")
     private String subscriberID;
@@ -25,18 +29,28 @@ public class CallRecord {
         this.callStartTime = callStartTime;
         this.callEndTime = callEndTime;
         this.phoneNumber = phoneNumber;
-
-        // Calculate the call duration in seconds
-        this.callDuration = (int) java.time.Duration.between(callStartTime, callEndTime).getSeconds();
+        
+    }
+	public boolean isCallActive() {
+		return callActive;
+	}
+	public void setCallActive(boolean callActive) {
+		this.callActive = callActive;
+	}
+	
+	public int calculateCallDuration() {
+    	return callDuration = (int) java.time.Duration.between(callStartTime, callEndTime).getSeconds();	
     }
     
-    public String getId() {
+    public void setId(String id) {
+		this.id = new ObjectId(id);
+	}
+
+	public ObjectId getId() {
 		return id;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
+	
 
 	public LocalDateTime getCallStartTime() {
 		return callStartTime;

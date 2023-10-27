@@ -1,0 +1,12 @@
+.side-by-side {
+    display: flex;
+    justify-content: space-between;
+}
+
+.data-container {
+    flex: 1; /* Adjust the width as needed */
+}
+
+.chart-container {
+    flex: 1; /* Adjust the width as needed */
+}

@@ -1,0 +1,139 @@
+plans.component.css
+.plans-container {
+  padding: 20px;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 0px;
+}
+
+.plan-filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.plan-filters select {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.plan-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.plan-card {
+  border: 1px solid #A9A9A9;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #F5F5DC;
+  width: 300px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow for cards */
+  transition: box-shadow 0.3s; /* Add a transition effect for the box shadow on hover */
+}
+
+.plan-card:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9); /* Adjust the box shadow on hover as desired */
+}
+
+.plan-card h3 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.plan-card p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+/* Style the buttons */
+.plan-card button {
+  margin: 5px;
+  padding: 10px 20px;
+
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.plan-card button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+.add-plan-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.add-plan-button button {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #2a3541; /* Change to your desired background color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-plan-button button:hover {
+  background-color: #00060c; /* Change to your desired hover color */
+}
+/* styles.css (or your CSS file) */
+.custom-button {
+  background-color: #be2c2c; /* Change this color to the color you prefer */
+  color: #fff; /* Text color for the button */
+  border: #A9A9A9; /* Remove the button border if desired */
+  padding: 8px 16px; /* Adjust padding as needed */
+  cursor: pointer; /* Show pointer cursor on hover for better UX */
+}
+
+/* Style the button on hover if desired */
+.custom-button:hover {
+  background-color: #ff8844; /* Change the hover color as needed */
+}
+/* Style the container for the select elements */
+.select-container {
+  display: flex;
+  gap: 20px; /* Adjust the gap between the select elements as needed */
+}
+
+/* Style the custom select elements */
+.custom-select {
+  width: 200px; /* Adjust the width as needed */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Style the select button (arrow) */
+.custom-select::after {
+  content: '\25BC'; /* Unicode for a down arrow (▼) */
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+/* Style the dropdown menu options */
+.custom-select option {
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  padding: 10px; /* Adjust the padding as needed */
+}
+
+.custom-select option:hover {
+  background-color: #007bff; /* Change the background color on hover */
+  color: #fff; /* Change the text color on hover */
+}
+
+

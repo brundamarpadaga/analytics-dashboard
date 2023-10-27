@@ -1,0 +1,49 @@
+<!-- plans.component.html -->
+<div class="container mt-5">
+    <h2>Plans</h2>
+
+
+
+    <div class="plan-filters">
+        <div class="add-plan-button">
+            <button class="btn btn-primary" (click)="navigateToAddPlanPage()">Add Plan</button>
+        </div>
+        <!-- Dropdown to select the plan type -->
+        <select [(ngModel)]="selectedPlanType" (change)="onPlanTypeChange($event)" class="custom-select">
+            <option value="Prepaid">Prepaid</option>
+            <option value="Postpaid">Postpaid</option>
+        </select>
+
+        <!-- Dropdown to select the city -->
+        <select [(ngModel)]="selectedCity" (change)="onCityChange($event)" class="custom-select">
+            <option *ngFor="let city of cityOptions" [value]="city">{{ city }}</option>
+          </select>
+    </div>
+
+
+
+
+    <!-- Display existing plans -->
+    <div class="plan-list">
+        <div *ngFor="let plan of plans">
+            <div class="plan-card" *ngIf="plan.planType === selectedPlanType">
+                <h3>{{ plan.planName }}</h3>
+                <p>Id: {{plan.planId}}</p>
+                <p>Type: {{ plan.planType }}</p>
+                <p>Validity: {{ plan.validity }} days</p>
+                <p>Price: &#8377; {{ plan.locationBasedPricing[selectedCity] }}</p>
+                <p>SMS: {{ plan.totalSMS}}/pack <span *ngIf="plan.planType === 'Prepaid'"> | Data: {{plan.dataPerDay}}
+                        {{plan.dataUnit}}/day </span> </p>
+                <p>
+                    <span *ngIf="plan.planType === 'Postpaid'"> Data with roll-over: {{ plan.dataPerPack }} {{
+                        plan.dataUnit }} </span>
+                </p>
+                <p> {{ plan.callsUnlimited ? 'Unlimited local STD & Roaming Calls' : 'Talk time: '+ plan.talkTime }}</p>
+                <p> Validity:{{plan.validity}} days</p>
+
+                <button class="custom-button" (click)="navigateToEditPlanPage(plan.planId)">Edit</button>
+                <button class="custom-button" (click)="deletePlan(plan.planId)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

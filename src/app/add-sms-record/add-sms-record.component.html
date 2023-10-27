@@ -1,0 +1,16 @@
+<!-- add-sms-record.component.html -->
+<div class="container mt-5">
+    <h2>Add SMS Record</h2>
+    <div class="form-group">
+        <label for="subscriberSelect">Select a Subscriber:</label>
+        <select id="subscriberSelect" class="form-control" [(ngModel)]="selectedSubscriberId">
+            <option *ngFor="let subscriber of subscribers" [value]="subscriber.subscriberID">{{ subscriber.name }}</option>
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Recipient's Phone Number:</label>
+      <input id="phoneNumber" type="text" class="form-control" [(ngModel)]="phoneNumber">
+    </div>
+    <button class="btn btn-primary" (click)="sendSmsRecord()">Send SMS</button>
+  </div>
+  

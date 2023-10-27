@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <h2>Add Call Record</h2>
+    <div class="form-group">
+        <label for="subscriberSelect">Select a Subscriber:</label>
+        <select id="subscriberSelect" class="form-control" [(ngModel)]="selectedSubscriberId">
+            <option *ngFor="let subscriber of subscribers" [value]="subscriber.subscriberID">{{ subscriber.name }}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="phoneNumber">Recipient's Phone Number:</label>
+        <input id="phoneNumber" type="text" class="form-control input-small" [(ngModel)]="phoneNumber">
+    </div>
+    <button class="btn btn-primary" (click)="startCall()">Start Call</button>
+    
+    <div *ngIf="activeCalls && activeCalls.length > 0">
+        <h2>Active Calls</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Subscriber ID</th>
+                    <th>Phone Number</th>
+                    <th>Call Start Time</th>
+                    <th>End Call</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let call of activeCalls">
+                    <td>{{ call.subscriberID }}</td>
+                    <td>{{ call.phoneNumber }}</td>
+                    <td>{{ call.callStartTime }}</td>
+                    <td><button class="btn btn-danger" (click)="endCall(call.id)">End Call</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="activeCalls && activeCalls.length === 0">
+        <p>No active calls found.</p>
+    </div>
+</div>

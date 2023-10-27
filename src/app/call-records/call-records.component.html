@@ -1,0 +1,83 @@
+<div class="admin">
+  <header class="admin__header">
+    <a href="#" class="logo">
+      <h1>Insights</h1>
+    </a>
+    <!-- <div class="toolbar">
+      <button class="btn btn--primary">Add New Plumbus</button>
+      <a href="#" class="logout">
+        Log Out
+      </a>
+    </div> -->
+  </header>
+  <nav class="admin__nav">
+    <ul class="menu">
+      <li class="menu__item">
+        <a class="menu__link" href="/dashboard">Dashboard</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="/plans">Plans</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="/subscribers">Subscribers</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="/call-records">Call Records</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="/sms-records">SMS records</a>
+      </li>
+      <!-- <li class="menu__item">
+        <a class="menu__link" href="#">Plumbuses</a>
+      </li> -->
+    </ul>
+  </nav>
+  <main class="admin__main">
+
+    <div class="container mt-5">
+      <h2>Call Records</h2>
+      <div class="row">
+        <div class="col-4">
+          <input type="text" placeholder="Search by Subscriber ID" [(ngModel)]="searchSubscriberId" (input)="searchCallRecords()">
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Subscriber ID</th>
+                <th>Call Start Time</th>
+                <th>Call End Time</th>
+                <th>Call Duration</th>
+                <th>Phone Number</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let record of callRecords">
+                <td>{{ record.subscriberID }}</td>
+                <td>{{ record.callStartTime }}</td>
+                <td>{{ record.callEndTime }}</td>
+                <td>{{ formatCallDuration(record.callDuration) }}</td>
+                <td>{{ record.phoneNumber }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    
+  </main>
+
+  
+  
+
+</div>

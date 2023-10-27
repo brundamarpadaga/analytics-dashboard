@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <h1 class="mb-4">Subscriber Usage Details</h1>
+    <div *ngIf="subscriberUsage" class="side">
+        <div class="data-container">
+
+            <p> <strong>ID: </strong>{{subscriberUsage.id}} </p>
+            <p><strong>Subscriber ID:</strong> {{ subscriberId }}</p>
+            <p><strong>Data Left:</strong> {{ subscriberUsage.dataLeft }} MB</p>
+            <p><strong>SMS Left:</strong> {{ subscriberUsage.smsLeft }}</p>
+            <p><strong>Talk Time Left:</strong> {{ subscriberUsage.talkTimeLeft }} minutes</p>
+            <p><strong>Unlimited Calls:</strong> {{ subscriberUsage.unlimitedCalls ? 'Yes' : 'No' }}</p>
+            <p><strong>Validity:</strong> {{ subscriberUsage.validity }} days</p>
+            <p><strong>Renewal Type:</strong> {{ subscriberUsage.renewalType }}</p>
+
+        </div>
+
+        <div *ngIf="dataLeft" class="chart-container">
+            <div class="chart-template">
+                <div class="chart-container">
+                    <canvas baseChart [data]="pieChartData" [options]="pieChartOptions" [type]="pieChartType"
+                        [legend]="pieChartLegend" [plugins]="pieChartPlugins">
+                    </canvas>
+                </div>
+                <div class="chart-legend">
+                    <p> {{ (dataLeft.dataLeft / dataLeft.totalData * 100) | number:'1.0-1' }}% Data Left </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+/* Customize the form layout */
+.form-group {
+    margin-bottom: 10px;
+}
+
+/* Adjust the button size */
+.btn-sm {
+    font-size: 16px;
+    padding: 8px 10px;
+}
+
+/* Center-align the button vertically with input fields */
+.align-items-center {
+    align-items: right;
+}

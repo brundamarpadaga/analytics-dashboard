@@ -49,8 +49,9 @@ public class SubscriberService {
 	}
 
 
-	public void addSubscriber(Subscriber sub) {
+	public String addSubscriber(Subscriber sub) {
 		subscriberRepository.save(sub);
+		return "Subscriber added successfully";
 		
 	}
 
